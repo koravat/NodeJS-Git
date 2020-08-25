@@ -1,0 +1,966 @@
+s/*!
+* Elegant Pingendo template (https://templates.pingendo.com)
+* Based on: Bootstrap v4.1.3 (https://getbootstrap.com)
+* Copyright 2014-2018 Pingendo (https://pingendo.com)
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200'); 
+@import url('https://fonts.googleapis.com/css?family=Cormorant Garamond:300,600');
+
+
+// Semantic color scheme
+
+$theme-colors: (
+  primary: #1b2021,
+  secondary: #505050,
+  success: #28a745,
+  info: #8a8a8a,
+  warning: #ffc107,
+  danger: #dc3545,
+  light: #f8f9fa,
+  dark: #202020
+);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+ 
+$enable-rounded:            true !default;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+// Variables
+//
+// Theme settings.
+
+$body-bg: #ffffff;
+
+$body-color: white;
+
+$headings-color: white;
+$body-color-inverse: invert($body-color) !default;
+$link-color: #aaaaaa;
+
+// Fonts
+$font-family-base: Montserrat;
+$headings-font-family: Cormorant Garamond;
+$font-size-base: 0.8rem;
+$font-weight-normal: 300;
+$headings-line-height: 1.2;
+$lead-font-size: 1.30rem;
+$font-weight-light: 300;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+// Assumes the browser default, typically `16px`
+$h1-font-size: 2.5 * $font-size-base;
+$h2-font-size: 2 * $font-size-base;
+$h3-font-size: 1.75 * $font-size-base;
+$h4-font-size: 1.5 * $font-size-base;
+$h5-font-size: 1.25 * $font-size-base;
+$h6-font-size: $font-size-base;
+$display1-size: 6 * $font-size-base;
+$display2-size: 5.5 * $font-size-base;
+$display3-size: 4.5 * $font-size-base;
+$display4-size: 3.5 * $font-size-base;
+
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 960px);
+$spacer: 1.5rem;
+
+
+// Components
+$border-width: 													1px;
+$border-radius: 												0rem;
+$border-radius-lg: 											$border-radius * 1.2;
+$border-radius-sm: 											$border-radius * .4;
+$component-active-color :								map-get($theme-colors,"light");
+
+// Buttons
+
+$input-btn-padding-x-lg:    						1.25rem;
+$input-btn-padding-x:       						1rem !default;
+
+// Cards
+$card-border-width:        							0px;
+$card-bg: 															rgba(#333,.5);
+
+// Breadcrumb
+$breadcrumb-bg: 												transparent !default;
+$breadcrumb-active-color:       				white;
+
+// Carousel
+$carousel-caption-width:      					75%;
+$carousel-indicator-height:							6px !default;
+
+// Forms
+$form-group-margin-bottom:       0rem;
+
+// Nav tabs
+$nav-tabs-border-color:									map-get($theme-colors,"primary");
+$nav-tabs-link-hover-border-color:      transparent;
+$nav-tabs-link-active-color:  					$component-active-color;
+$nav-tabs-link-active-bg:               map-get($theme-colors,"primary");
+$nav-tabs-link-active-border-color:     $nav-tabs-border-color;
+
+// Nav pills
+$nav-pills-link-active-color: 					$component-active-color;
+
+// Pagination
+$pagination-bg:                        	$body-bg;
+$pagination-border-color:              	map-get($theme-colors,"dark");
+$pagination-hover-bg:                  	$body-bg;
+$pagination-hover-border-color:        	$pagination-border-color;
+$pagination-active-color:              	$component-active-color;
+$pagination-active-bg:                 	map-get($theme-colors,"primary");
+$pagination-active-border-color:       	$component-active-color;
+$pagination-disabled-color:            	darken(map-get($theme-colors,"light"), 70%);
+$pagination-disabled-bg:               	$body-bg;
+$pagination-disabled-border-color:     	$pagination-disabled-bg;
+
+// List group
+$list-group-bg:                  				$body-bg;
+$list-group-border-color:        				map-get($theme-colors,"dark");
+$list-group-hover-bg:                 	$body-bg;
+$list-group-active-color:             	$component-active-color;
+$list-group-action-color:             	$link-color;
+$list-group-active-border-color:      	map-get($theme-colors,"dark") !default;
+$list-group-action-hover-color:       	map-get($theme-colors,"light");
+$list-group-action-active-color:      	$body-color !default;
+$list-group-action-active-bg:         	transparent;
+
+// Horizontal rule
+$hr-border-color: rgba(map-get($theme-colors,"light"),.25);
+
+// Tables
+$table-accent-bg:               				rgba(map-get($theme-colors,"light"),.05);
+$table-inverse-bg:              				rgba(map-get($theme-colors,"light"),.5);
+$table-hover-bg:                				rgba(map-get($theme-colors,"light"),.1);
+
+@import 'bootstrap-4.1.3';
+
+html,body {
+   height:100%;
+}
+
+body > * {
+  background-position: center;
+}
+
+.photo-overlay {
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px; 
+    pointer-events:none;
+    background: rgba(map-get($theme-colors, 'dark'), 0.5);
+  }
+}
+
+.bg-dark-opaque {
+  background: rgba(map-get($theme-colors, 'primary'), 0.60);  
+  .btn {
+  border-color: rgba(map-get($theme-colors, 'light'), 1);
+  color: white;
+  }
+}
+
+.btn {
+ &.btn-outline-light:hover {
+      color: map-get($theme-colors,"dark");
+      background-color: map-get($theme-colors,"light");
+ }
+ &.btn:active, .btn.active {
+    color: map-get($theme-colors,"dark");
+    box-shadow: 0 0 0 3px rgba(18, 187, 173, 0.25), inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+}
+
+.carousel {
+	.carousel-caption {
+    padding-top:10px;
+    padding-bottom:10px;
+	  bottom:40px;
+		background: rgba(map-get($theme-colors, 'dark'), 0.75);
+    color: $body-color;
+	}
+  
+	.carousel-control-next, .carousel-control-prev {
+    opacity:0.85;
+  }
+  
+  .carousel-indicators {
+    bottom: 0px;
+  }
+  p {
+  margin-bottom:0px;
+  }
+}
+
+.cover {
+ min-height:100%; 
+}
+
+/* Animate state between .navbar and .navbar-ontop */
+.navbar {
+  transition: background-color .5s ease-out;
+}
+
+.navbar-ontop {
+  background-color: transparent !important;
+}
+
+/* Animate on entrance */
+
+.animate-in-down {
+  transition: all 1.3s ease-out;
+	position:relative;
+  opacity:1;
+  top:0px;
+  &.out-of-viewport {
+    top:40px;
+    opacity:0;
+  }
+}
+
+
+.animate-in-left {
+  transition: all 1.0s ease-out;
+	position:relative;
+  opacity:1;
+	left:0%;
+  &.out-of-viewport {
+    opacity:0;
+      left:-5%;
+  }
+}
+
+
+.animate-in-right {
+  transition: all 1.0s ease-out;
+	position:relative;
+  opacity:1;
+	left:0%;
+  &.out-of-viewport {
+    opacity:0;
+    left:5%;
+  }
+}
+
+/**
+* VARIABLES
+**/
+
+$duration: 0.5s;
+$delay: 0.2s;
+$color: coral;
+
+* { box-sizing: border-box; }
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body{
+  font-family: "Open Sans";
+  font-size:16px;
+   background-color: #eee;
+}
+
+/**
+* Title
+**/
+.title{ 
+  text-align: center;
+  transform: translateY(20px);
+  font-size: 45px;
+  
+  color: $color;
+  text-transform: uppercase;
+}
+
+/**
+* CARD
+**/
+
+.card {
+  position: absolute;
+  top: 50%;  left: 50%;
+  transform :  translateX(-50%) translateY(-50%) translateZ(0);
+  
+  width:350px;
+  
+  background-color: #fff;
+  box-shadow:0 0 20px rgba(black,0.1);
+  
+  overflow:hidden;
+  
+  transition: box-shadow $duration;
+  
+  a{
+    color:inherit;
+    text-decoration: none;
+  }
+}
+
+.card:hover{
+  box-shadow:0 0 50px rgba(black,0.3);
+}
+
+
+/**
+* DATE
+**/
+
+.card__date{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  
+  width: 30px;
+  height: 30px;
+  padding-top:6px;
+  background-image: url('./assets/picture/edit.png');
+  border-radius: 50%;
+  
+  color:#fff;
+  
+  text-align: center;
+  font-weight: 700;
+  line-height: 13px;
+ 
+}
+  .card__img{
+    width: 100px;
+  	height: 100px;
+ }
+
+
+/**
+* THUMB
+**/
+///pictuer and footer grab
+.card__thumb{
+  height: 230px;
+  
+  overflow:hidden;
+  
+  background-color: #000;
+  
+  transition: height $duration;
+  
+  img{
+    display:block;
+    opacity: 1;
+    
+    transform: scale(1);
+    
+    transition: opacity $duration, transform $duration;
+  }
+  
+  .card:hover &{
+    height: 130px;
+  }
+}
+
+.card:hover .card__thumb img{
+  opacity: 0.6;
+  transform: scale(1.2);
+}
+
+
+/**
+* BODY
+**/
+
+.card__body{
+  position: relative;
+  height: 150px;
+  background-color: #f1c40f;
+  
+  padding:20px;
+  
+  transition: height $duration;
+  
+  .card:hover &{
+    height: 150px + 115px;
+  }
+}
+////photo tab
+.card__category{
+  position: absolute;
+  top: -25px;  left: 0;
+  
+  height: 25px;
+  
+  padding:0 15px;
+  background-color: #f1c40f;
+  
+  color:#fff;
+  text-transform: uppercase;
+  font-size:11px;
+  line-height: 25px;
+}
+
+.card__title{
+  margin-bottom: 10px; padding: 0 0 0;
+  
+  color: #ffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card__description{
+
+  left: 27px; right: 20px;
+  bottom:25px;
+  
+  margin: 0; padding: 0;
+  
+  color: #ffff;
+  line-height: 20px;
+  
+  opacity:0;
+  transform: translateY(45px);
+  
+  transition: opacity $duration -$delay, transform $duration -$delay;
+  transition-delay: 0s;
+  
+  
+  
+  .card:hover &{
+    opacity:1;
+    transform: translateY(0);
+    transition-delay: $delay;  
+  }
+}
+////time and comment
+.card__footer{
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  right: 20px;
+  
+  font-size: 11px;
+  color:#ffff;
+}
+
+.icon{
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 0 0 2px;
+  font-size: 18px;
+  
+  & + &{
+    padding-left:10px;
+  }
+}
+
+.userbar{
+	position: fixed;
+}
+
+// Import font
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+// Colours
+$bodybg: #674172;
+$darkgrey: #333;
+$whitegrey: #ececec;
+$yellow: #f1c40f;
+$turquoise: #1abc9c;
+$red: #e74c3c;
+$blue: #3498db;
+$orange: #e67e22;
+
+// Reset, base & layout
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font:{
+    family: lato;
+    size: 12px;
+  }
+  background-color: $bodybg;
+}
+// Media queries to change body font size
+// This then triggers other units in the doc to change size of elements
+@media screen and (min-width:656px){
+  html, body {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width:820px){
+  html, body{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width:1000px){
+  html, body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width:1200px){
+  html, body {
+    font-size: 18px;
+  }
+}
+header {
+  color: $whitegrey;
+  text-align: center;
+  margin-top: 26vh;
+  h1 {
+    letter-spacing: 3px;
+    font-size: 4.5rem;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin: 5vh auto;
+    max-width: 62vw;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+// Buttons
+.btn {
+  font-family: 'lato';
+  font-size: 0.75rem;
+  background: none;
+  border: 0.175em solid $whitegrey;
+  padding: 1.4em 3.3em;
+  color: $whitegrey;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+.round {
+  border-radius: 24px;
+}
+.square {
+  border-radius: 0px;
+}
+// Button 1
+.btn-one {
+  border-color: $yellow;
+  color: $darkgrey;
+  box-shadow: 0 0 0 0 $yellow,
+    inset 0 0 200px 28px $yellow;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+  box-shadow: 0 0 40px 0 $yellow,
+    inset 0 0 25px 0 $yellow;
+  color: $yellow;
+  }
+}
+// Button 2
+.btn-two {
+  color: #f1c40f;
+  border-color: #f1c40f;
+  box-shadow:  0 0 0 0 #f1c40f, inset 0 0 0 0 #f1c40f;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    color: $whitegrey;
+    box-shadow: 0 0 40px 0 #f1c40f, inset 0 0 200px 5px #f1c40f;
+  }
+}
+// Button 3
+.btn-three {
+  border-color: $turquoise;
+  color: $whitegrey;
+  background:{
+    image: linear-gradient(45deg, $turquoise, transparent);
+    position: 75%;
+    size: 200%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    background:{
+      position: 0%;
+    }
+  }
+}
+// Button 4
+.btn-four {
+  border-color: tra;
+  color: $red;
+  background:{
+    image: linear-gradient(45deg, transparent 50%, $red 50%);
+    position: 25%;
+    size: 400%;
+  }
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  &:hover {
+    color: $whitegrey;
+    background:{
+      position: 100%;
+    }
+  }
+}
+// Button 5
+.btn-five{
+  border-color: $orange;
+  background:{
+    image: linear-gradient(0deg, transparent 50%, $orange 50%);
+    position: 0 -100%;
+    size: 500%;
+  }
+  transition: background 500ms ease-in-out, color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+  &:hover {
+    color: $orange;
+    background:{
+      position: 0 -50%;
+    }
+    box-shadow: 0 0 40px 0 $orange;
+  }
+}
+
+$background: #f1e1c5;
+$beerL: #ffc200;
+$beerD: #fdac10;
+$foam: #fff9de;
+$mug: #f1ecdb;
+$size-anim: 100px;
+$size-single-div: 100px;
+
+.badge {
+  background: darken($background, 20%);
+  height: $size-single-div * 2;
+  width: $size-single-div * 2;
+  min-width: $size-single-div * 2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  filter: drop-shadow(0px 0px 0px rgba(0,0,0,0));
+  transition: 150ms linear;
+  &:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.15));
+  }
+  &:hover {
+    &:after {
+      content: 'Customer!';
+      position: absolute;
+      color: #fff;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 3em;
+      letter-spacing: .1em;
+      top: -25%;
+    }
+  }
+  &.anim {
+    height: $size-anim * 2;
+    width: $size-anim * 2; 
+    &:hover {
+      &:after {
+        content: 'Store Owner!';
+      }
+    }  
+  }
+}
+
+.beer-single-div {  
+  position: relative;
+  height: $size-single-div;
+  width: $size-single-div * .75;
+  min-width: $size-single-div * .75;
+  margin-top: ($size-single-div * .2);
+  background-image: 
+    /*bottom of mug*/
+    radial-gradient(($size-single-div * .65) ($size-single-div * .15) at 50% 103%, $mug 40%, transparent 40%), 
+    
+    /*reflection top*/
+    radial-gradient(($size-single-div * .04) ($size-single-div * .06) at 15% 67%, lighten($beerL, 30%) 80%, transparent 83%), 
+    radial-gradient(($size-single-div * .04) ($size-single-div * .06) at 15% 18%, lighten($beerL, 30%) 80%, transparent 83%), 
+    
+    /*bubbles*/
+    radial-gradient(($size-single-div * .06) ($size-single-div * .06) at 25% 85%, lighten($beerL, 20%) 80%, transparent 80%),
+    
+    /*reflection bottom*/
+    radial-gradient(($size-single-div * .17) ($size-single-div * .3) at 15% 90%, $beerL 70%, transparent 70%), 
+    radial-gradient(($size-single-div * .17) ($size-single-div * .17) at 15% 5%, $beerL 70%, transparent 70%),   
+    linear-gradient(to right, transparent 0%, transparent 10%, lighten($beerL, 30%) 10%, lighten($beerL, 30%) 20%, transparent 20%),
+    
+    /*bubbles*/
+    radial-gradient(($size-single-div * .04) ($size-single-div * .04) at 70% 45%, lighten($beerD, 20%) 80%, transparent 80%),
+    radial-gradient(($size-single-div * .05) ($size-single-div * .05) at 35% 27%, lighten($beerL, 20%) 80%, transparent 80%),
+    radial-gradient(($size-single-div * .03) ($size-single-div * .03) at 80% 12%, lighten($beerD, 20%) 80%, transparent 80%),
+    radial-gradient(($size-single-div * .04) ($size-single-div * .04) at 60% 81%, lighten($beerD, 20%) 80%, transparent 80%),
+    radial-gradient(($size-single-div * .03) ($size-single-div * .03) at 89% 89%, lighten($beerD, 20%) 80%, transparent 80%),
+    radial-gradient(($size-single-div * .05) ($size-single-div * .05) at 77% 78%, lighten($beerD, 20%) 80%, transparent 80%),
+    radial-gradient(($size-single-div * .03) ($size-single-div * .03) at 40% 57%, lighten($beerL, 20%) 80%, transparent 80%),
+    
+    /*beer*/
+    linear-gradient(to right, $beerL 50%, $beerD 50%); 
+  border-radius: 0 0 15% 15%;
+  border: ($size-single-div * .06) solid $mug; /*mug*/
+  box-sizing: border-box;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 0 50% 50% 0;
+    height: ($size-single-div * .5);
+    width: ($size-single-div * .35);
+    top: ($size-single-div * .15);
+    right: ($size-single-div * -.33);
+    background-color: transparent;
+    box-sizing: border-box;
+    border: ($size-single-div * .08) solid $mug; /*mug handle*/
+    border-left: ($size-single-div * .08) solid transparent;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: 20%;
+    height: ($size-single-div * .10);
+    width: ($size-single-div * .10);
+    background: lighten($foam, 5%);
+    border-radius: ($size-single-div * .17);
+    box-shadow:
+      /*foam*/ 
+      0 ($size-single-div * .11) 0 ($size-single-div * .07) $foam,
+      0 ($size-single-div * .07) 0 ($size-single-div * .07) lighten($foam, 5%),
+      
+      ($size-single-div * -.27) ($size-single-div * .07) 0 ($size-single-div * .04) $foam,
+      ($size-single-div * -.39) ($size-single-div * .06) 0 ($size-single-div * .06) lighten($foam, 5%),
+      ($size-single-div * -.18) ($size-single-div * .12) 0 ($size-single-div * .04) $foam,
+      ($size-single-div * -.5) ($size-single-div * .08) 0 ($size-single-div * .04) $foam,
+      
+      ($size-single-div * -.15) 0 0 ($size-single-div * .06) lighten($foam, 5%),
+      ($size-single-div * .14) ($size-single-div * .07) 0 ($size-single-div * .06) lighten($foam, 5%),
+      
+      ($size-single-div * -.32) ($size-single-div * -.08) 0 ($size-single-div * .05) lighten($foam, 5%),
+      ($size-single-div * -.18) ($size-single-div * -.14) 0 ($size-single-div * .05) $foam,
+      ($size-single-div * -.05) ($size-single-div * -.07) 0 ($size-single-div * .05) $foam,
+         
+      ($size-single-div * .07) ($size-single-div * -.05) 0 ($size-single-div * .01) lighten($foam, 5%),
+      ($size-single-div * .09) ($size-single-div * -.07) 0 ($size-single-div * .01) $foam,
+      ($size-single-div * .25) ($size-single-div * .07) 0 ($size-single-div * .01) $foam
+      ;
+  }
+}
+
+.beer-animation-wrapper {
+  position: relative;
+  overflow-y: hidden; 
+  padding: $size-anim * 0.17;
+  margin-right: 0px;
+  
+  .beer {  
+    position: relative;
+    height: $size-anim;
+    width: $size-anim * 0.75;
+    min-width: $size-anim * 0.75;
+    margin-top: $size-anim * 0.32;
+    margin-right: $size-anim * 0.27;
+    margin-left: $size-anim * 0.1;
+    z-index: -2;
+    background-image:     
+      /*bottom of mug*/
+      radial-gradient(($size-anim * .65) ($size-anim * .15) at 50% 103%, $mug 40%, transparent 40%),    
+      /*beer*/
+      linear-gradient(to right, $beerL 50%, $beerD 50%); 
+    border-radius: 0 0 15% 15%;
+    /*mug*/
+    border: ($size-anim * .06) solid $mug; 
+    box-sizing: border-box;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 130%;
+      width: 100%;
+      bottom: -5%;
+      z-index: -1;
+      opacity: 1;
+      animation: 3s bubbles linear infinite;
+      background:
+      /*bubbles*/
+      radial-gradient(($size-anim * .06) ($size-anim * .06) at 25% 85%, lighten($beerL, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .04) ($size-anim * .04) at 70% 45%, lighten($beerD, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .05) ($size-anim * .05) at 35% 40%, lighten($beerD, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .03) ($size-anim * .03) at 80% 30%, lighten($beerD, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .04) ($size-anim * .04) at 60% 81%, lighten($beerD, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .03) ($size-anim * .03) at 89% 89%, lighten($beerD, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .05) ($size-anim * .05) at 77% 78%, lighten($beerD, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .03) ($size-anim * .03) at 40% 57%, lighten($beerL, 20%) 80%, transparent 80%),
+       radial-gradient(($size-anim * .02) ($size-anim * .02) at 30% 67%, lighten($beerL, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .02) ($size-anim * .02) at 30% 17%, lighten($beerL, 20%) 80%, transparent 80%),
+      radial-gradient(($size-anim * .03) ($size-anim * .03) at 40% 10%, lighten($beerL, 20%) 80%, transparent 80%),  
+      radial-gradient(($size-anim * .05) ($size-anim * .05) at 62% 24%, lighten($beerL, 20%) 80%, transparent 80%), 
+      radial-gradient(($size-anim * .04) ($size-anim * .04) at 18% 31%, lighten($beerL, 20%) 80%, transparent 80%), 
+      radial-gradient(($size-anim * .06) ($size-anim * .06) at 83% 60%, lighten($beerL, 20%) 80%, transparent 80%)       
+        ;
+    }
+    &:after {
+      /*mug handle*/
+      content: '';
+      position: absolute;
+      border-radius: 0 50% 50% 0;
+      height: ($size-anim * .5);
+      width: ($size-anim * .33);
+      top: ($size-anim * .15);
+      right: ($size-anim * -.33);
+      background-color: transparent;
+      box-sizing: border-box;
+      border: ($size-anim * .08) solid $mug; 
+      border-left: ($size-anim * .06) solid $mug;    
+    }
+  }
+  .foam {
+    position: relative;
+    top: -20%;
+    left: 63%;
+    height: ($size-anim * .10);
+    width: ($size-anim * .10);
+    background: lighten($foam, 5%);
+    border-radius: ($size-anim * .17);
+    box-shadow:
+      /*reflection*/ 
+      ($size-anim * -.35) ($size-anim * .28) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .29) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .30) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .31) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .32) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .33) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .34) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .35) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .36) 0 ($size-anim * -.015) lighten($beerL, 30%), 
+      ($size-anim * -.35) ($size-anim * .37) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .38) 0 ($size-anim * -.015) lighten($beerL, 30%),   
+      ($size-anim * -.35) ($size-anim * .39) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .40) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .41) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .42) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .43) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .44) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .45) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .46) 0 ($size-anim * -.015) lighten($beerL, 30%), 
+      ($size-anim * -.35) ($size-anim * .47) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .48) 0 ($size-anim * -.015) lighten($beerL, 30%),   
+      ($size-anim * -.35) ($size-anim * .49) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .50) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .51) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .52) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .53) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .54) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .55) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .56) 0 ($size-anim * -.015) lighten($beerL, 30%), 
+      ($size-anim * -.35) ($size-anim * .57) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .58) 0 ($size-anim * -.015) lighten($beerL, 30%),   
+      ($size-anim * -.35) ($size-anim * .59) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .60) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .61) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .62) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .63) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .64) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .65) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .66) 0 ($size-anim * -.015) lighten($beerL, 30%), 
+      ($size-anim * -.35) ($size-anim * .67) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .68) 0 ($size-anim * -.015) lighten($beerL, 30%),   
+      ($size-anim * -.35) ($size-anim * .69) 0 ($size-anim * -.015) lighten($beerL, 30%),   
+      ($size-anim * -.35) ($size-anim * .70) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .71) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .72) 0 ($size-anim * -.015) lighten($beerL, 30%),
+      ($size-anim * -.35) ($size-anim * .73) 0 ($size-anim * -.015) lighten($beerL, 30%),    
+      /*foam*/ 
+      0 ($size-anim * .11) 0 ($size-anim * .07) $foam,
+      0 ($size-anim * .07) 0 ($size-anim * .07) lighten($foam, 5%),
+      ($size-anim * -.27) ($size-anim * .07) 0 ($size-anim * .04) $foam,
+      ($size-anim * -.39) ($size-anim * .06) 0 ($size-anim * .06) lighten($foam, 5%),
+      ($size-anim * -.18) ($size-anim * .12) 0 ($size-anim * .04) $foam,
+      ($size-anim * -.5) ($size-anim * .08) 0 ($size-anim * .04) $foam,
+      ($size-anim * -.15) 0 0 ($size-anim * .06) lighten($foam, 5%),
+      ($size-anim * .14) ($size-anim * .07) 0 ($size-anim * .06) lighten($foam, 5%),
+      ($size-anim * -.32) ($size-anim * -.08) 0 ($size-anim * .05) lighten($foam, 5%),
+      ($size-anim * -.18) ($size-anim * -.14) 0 ($size-anim * .05) $foam,
+      ($size-anim * -.05) ($size-anim * -.07) 0 ($size-anim * .05) $foam,
+      ($size-anim * .07) ($size-anim * -.05) 0 ($size-anim * .01) lighten($foam, 5%),
+      ($size-anim * .09) ($size-anim * -.07) 0 ($size-anim * .01) $foam,
+      ($size-anim * .25) ($size-anim * .07) 0 ($size-anim * .01) $foam;
+    &:before, &:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      top: 200%;
+      width: ($size-anim * .10);  
+      border-radius: ($size-anim * .17);
+      background: $foam;
+      background: (linear-gradient(to right, $foam 75%, lighten($foam, 5%) 75%));
+    }
+    &:after {
+      left: 100%;
+      height: ($size-anim * 0);
+      animation: drip1 2s ease-out forwards;
+    }
+    &:before {
+      right: 25%;
+      height: ($size-anim * 0);
+      animation: drip2 5s ease-out forwards;
+    }
+  }
+}
+
+@keyframes drip2 {
+  0% {
+    height: ($size-anim * 0);
+  }
+  50% {
+    height: ($size-anim * .30);
+  }
+  75% {
+    height: ($size-anim * .30);
+  }
+  80% {
+    height: ($size-anim * .30);
+  }
+  100% {
+    height: ($size-anim * .35);
+  }
+}
+
+@keyframes drip1 {
+  0% {
+    height: ($size-anim * 0);
+  }
+  100% {
+    height: ($size-anim * .50);
+  }
+}
+
+@keyframes bubbles {
+  0% {
+    transform: translatey(0%);
+  }
+  99% {
+    transform: translatey(-50%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+

@@ -1,0 +1,162 @@
+// Import font
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+// Colours
+$bodybg: #674172;
+$darkgrey: #333;
+$whitegrey: #ececec;
+$yellow: #f1c40f;
+$turquoise: #1abc9c;
+$red: #e74c3c;
+$blue: #3498db;
+$orange: #e67e22;
+
+// Reset, base & layout
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font:{
+    family: lato;
+    size: 12px;
+  }
+  background-color: $bodybg;
+}
+// Media queries to change body font size
+// This then triggers other units in the doc to change size of elements
+@media screen and (min-width:656px){
+  html, body {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width:820px){
+  html, body{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width:1000px){
+  html, body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width:1200px){
+  html, body {
+    font-size: 18px;
+  }
+}
+header {
+  color: $whitegrey;
+  text-align: center;
+  margin-top: 26vh;
+  h1 {
+    letter-spacing: 3px;
+    font-size: 4.5rem;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin: 5vh auto;
+    max-width: 62vw;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+// Buttons
+.btn {
+  font-family: 'lato';
+  font-size: 0.75rem;
+  background: none;
+  border: 0.175em solid $whitegrey;
+  padding: 1.4em 3.3em;
+  color: $whitegrey;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+.round {
+  border-radius: 24px;
+}
+.square {
+  border-radius: 0px;
+}
+// Button 1
+.btn-one {
+  border-color: $yellow;
+  color: $darkgrey;
+  box-shadow: 0 0 0 0 $yellow,
+    inset 0 0 200px 28px $yellow;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+  box-shadow: 0 0 40px 0 $yellow,
+    inset 0 0 25px 0 $yellow;
+  color: $yellow;
+  }
+}
+// Button 2
+.btn-two {
+  color: #f1c40f;
+  border-color: #f1c40f;
+  box-shadow:  0 0 0 0 #f1c40f, inset 0 0 0 0 #f1c40f;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    color: $whitegrey;
+    box-shadow: 0 0 40px 0 #f1c40f, inset 0 0 200px 5px #f1c40f;
+  }
+}
+// Button 3
+.btn-three {
+  border-color: $turquoise;
+  color: $whitegrey;
+  background:{
+    image: linear-gradient(45deg, $turquoise, transparent);
+    position: 75%;
+    size: 200%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    background:{
+      position: 0%;
+    }
+  }
+}
+// Button 4
+.btn-four {
+  border-color: tra;
+  color: $red;
+  background:{
+    image: linear-gradient(45deg, transparent 50%, $red 50%);
+    position: 25%;
+    size: 400%;
+  }
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  &:hover {
+    color: $whitegrey;
+    background:{
+      position: 100%;
+    }
+  }
+}
+// Button 5
+.btn-five{
+  border-color: $orange;
+  background:{
+    image: linear-gradient(0deg, transparent 50%, $orange 50%);
+    position: 0 -100%;
+    size: 500%;
+  }
+  transition: background 500ms ease-in-out, color 500ms ease-in-out, box-shadow 500ms ease-in-out;
+  &:hover {
+    color: $orange;
+    background:{
+      position: 0 -50%;
+    }
+    box-shadow: 0 0 40px 0 $orange;
+  }
+}

@@ -1,0 +1,168 @@
+.ex1 {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.ex2 {
+    margin-top: 50px;
+}
+
+.ex3 {
+    margin-left: 70px;
+}
+
+.ex4 {
+    margin-left: 35px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+} */
+
+
+.mr-3 {
+  margin-right: 1rem !important;
+}
+
+#main-wrapper, #main-content {
+  display: flex;
+  flex: 1;
+}
+
+#main-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+#main-top-bar {
+  position: relative;
+  
+  height: 70px;
+  min-height: 70px;
+  width: 150px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  background: transparent;
+  background: transparent;
+  color: #f1c40f;
+  
+  padding-left: 1rem;
+}
+
+.shape { 
+  width: 40%;
+  height: 70px;
+  
+  -webkit-clip-path: polygon(94% 0, 100% 26%, 100% 100%, 0 100%, 22% 0);
+  clip-path: polygon(94% 0, 100% 26%, 100% 100%, 0 100%, 22% 0);
+  
+  background: transparent;
+  background: transparent;
+}
+
+.main-logo {
+  background: url(https://rolecalljobs.com/img/RoleCall_WhiteLogo.svg) no-repeat;
+  width: 140px;
+  height: 55px;
+}
+
+.user-dropdown, .user-menu {
+  position: absolute;
+  right: 0;
+  cursor: pointer; 
+}
+
+.user-menu {
+  height: 70px;
+  padding: 0 0rem;
+  top: 0;
+  z-index: 10;
+}
+
+.user-menu:hover {
+  background-color: transparent;
+  background-color: transparent;
+}
+
+.user-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:-20%;
+}
+
+.user-image-wrapper {
+  height: 70px;
+  margin-left: 0px;
+  background-color: transparent;
+  z-index: 20;
+}
+
+.user-image {
+  display: inline-block;
+  margin-top: 14px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-name-wrapper {
+  padding-left: 0rem;
+}
+
+.user-name-wrapper i {
+  padding: 0 0.3rem;
+}
+
+.user-menu.show {
+  background-color: transparent;
+  background-color: transparent;
+}
+
+.user-menu.show .user-dropdown {
+  box-shadow: -2px 4px 7px rgba(255, 255, 255, 0.2);
+  display: block;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 70px;
+  display: none;
+  right: 0;
+  width: 220px;
+  background-color: #000000;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  color: #f1c40f;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.dropdown-item:active, .dropdown-item:hover {
+  background-color: #f1c40f;
+
+}
+
+.dropdown-item:hover span {
+  color: #16181b;
+}
+
+.dropdown-item span {
+  color: #f1c40f;
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+}
+

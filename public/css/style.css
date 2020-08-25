@@ -1,0 +1,152 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  background: #757575;
+}
+
+/* Main Button styles*/
+.btn {
+  display: inline-block;
+  padding: 20px 50px;
+  margin: 50px 10px;
+  overflow: hidden;
+  
+  color: #FFF;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-decoration: none;
+  
+  border: 4px solid #FFF;
+  background-color: rgba(0,0,0,.34);
+  
+  /*Sets the background image to be 'below' the button*/
+  /*Background images are set using the classes below*/
+  background-position: 0 -50%;
+  background-repeat: repeat-x;
+  border-radius: 100px;
+  
+  -webkit-box-shadow: inset 4px 4px 0px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    inset 4px 4px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         inset 4px 4px 0px 0px rgba(50, 50, 50, 0.75);
+  
+  transition: background-position .75s ease;
+}
+
+/* Style to slow the effect speed */
+.slow {
+  transition: background-position 3s ease;
+}
+
+/* Style for when you want the button on a dark background*/
+.btn-invert {
+  border: solid 4px #000;
+  color: #000;
+  background-color: rgba(150,150,150,.25);
+  
+  -webkit-box-shadow: inset 4px 4px 0px 0px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow:    inset 4px 4px 0px 0px rgba(50, 50, 50, 0.35);
+  box-shadow:         inset 4px 4px 0px 0px rgba(50, 50, 50, 0.35);
+}
+
+/* Style for when the user hovers the button */
+.btn:hover {
+  background-position: 100% 50%;
+}
+
+/* Classes for background image colors */
+.green {
+  background-image: url('http://splatoon.nintendo.com/assets/img/nav/nav-bg-fill-general.png?1429022065');
+}
+
+.orange {
+  background-image: url('http://splatoon.nintendo.com/assets/img/nav-bg-fill-orange.png?1429563994');
+}
+
+.blue {
+  background-image: url('http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1429563994');
+}
+
+.purple {
+  background-image: url('http://splatoon.nintendo.com/assets/img/nav-bg-fill-purple.png?1429563994');
+}
+
+.pink {
+  background-image: url('http://splatoon.nintendo.com/assets/img/nav-bg-fill-pink.png?1429563994');
+}
+
+.teal {
+  background-image: url('http://splatoon.nintendo.com/assets/img/nav-bg-fill-turq.png?1429563994');
+}
+
+/* Presentation Styles */
+
+.main {
+  position: relative;
+  width: 70%;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: #FFF;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 25px;
+  
+  border: solid 4px #000;
+  
+  -webkit-box-shadow: inset 4px 4px 0px 0px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow:    inset 4px 4px 0px 0px rgba(50, 50, 50, 0.35);
+  box-shadow:         inset 4px 4px 0px 0px rgba(50, 50, 50, 0.35);
+}
+
+h1 {
+  margin: 35px 20px 20px 20px;
+  font-weight:700;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+p {
+  font-size: 2em;
+  width: 70%;
+  margin: 15px auto;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+img {
+  margin: 25px auto;;
+}
+
+.waves {
+  height: 100px;
+  width: 70%;
+  margin: 25px auto;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  
+  -webkit-animation-name: wave;
+   -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+   animation-name: wave;
+   animation-duration: 10s;
+   animation-iteration-count: infinite;
+}
+
+.dark {
+  width: 80%;
+  margin: 25px auto 50px auto;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: #424242;
+  color: #FFF;
+  
+  border: 4px solid #000;
+  
+  -webkit-box-shadow: inset 4px 4px 0px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    inset 4px 4px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         inset 4px 4px 0px 0px rgba(50, 50, 50, 0.75);
+}

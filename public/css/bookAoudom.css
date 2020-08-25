@@ -1,0 +1,70 @@
+.block-main1 {
+	margin-top: 20px;
+	margin-left: 100px;
+	float: left;
+}
+.block-main2 {
+	margin-left: 10px;
+	margin-top: 260px;
+	float: left;
+}
+.block-main3 {
+	margin-top: 80px;
+	margin-left: 20px;
+	float: left;
+}
+.block-main4 {
+	margin-top: 80px;
+	margin-left: 20px;
+	float: left;
+}
+.block-main5 {
+	margin-left: 10px;
+	margin-top: 180px;
+	float: left;
+}
+.block-main6 {
+	margin-top: 170px;
+	margin-left: 30px;
+	float: left;
+}
+
+.block-1 {
+	margin-left: 2px;
+	margin-top: 200px;
+	float: left;
+}
+.block-2 {
+	margin-left: 2px;
+	margin-top: 170px;
+	float: left;
+}
+.block-3 {
+	margin-left: 2px;
+	margin-top: 170px;	
+	float: left;
+}
+.block-4 {
+	width: 60px;
+	height: 120px;
+	margin-top: 170px;	
+	float: left;
+}
+.block-5 {
+	margin-left: 50px;
+	margin-top: 10px;	
+	float: left;
+}
+.block-6 {
+	margin-top: 10px;
+	margin-left: 40px;
+	float: left;
+}
+.block-7 {
+	margin-left: 40px;
+	margin-top: 280px;
+	float: left;
+}
+.block-8 {
+	background-image:url(plan.png);
+}
