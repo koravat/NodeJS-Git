@@ -1,0 +1,53 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  /* padding: 0;
+  margin: 0; */
+  /* max-width: 100%;
+  height: auto; */
+}
+
+
+
+
+#notfound {
+  position: relative;
+  height: 100vh;
+  background: transparent;
+}
+
+#notfound .notfound {
+  position: absolute;
+  /* margin: 0 auto; */
+  left: 900px;
+  top: 88%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.notfound a {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #ff005a;
+  text-decoration: none;
+  border: 2px solid;
+  background: transparent;
+  padding: 10px 40px;
+  font-size: 25px;
+  font-weight: 700;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.notfound a:hover {
+  color: #8400ff;
+}
+
+.responsive {
+  max-width: 100%;
+  height: 100%;
+}
