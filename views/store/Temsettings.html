@@ -1,0 +1,139 @@
+{% extends '../partials/Template.html' %}
+
+{% block title %}Setting-page{% endblock %}
+
+{% block head %}
+  <!-- {% parent %} -->
+ <link rel="stylesheet" href="css/puankin.css" type="text/css">
+ <script src="js/editProfile.js"></script> 
+ <script src='js/auth/auth_nomal.js'></script>
+  
+{% endblock %}
+
+{% block content %}
+<!-- top -->
+{%include "../partials/NavbarTop.html"%}
+
+<!-- Cover -->
+<!-- content -->
+<div class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_19.jpg&quot;);">
+    <div class="container"><br><br><br><br>
+      <div class="row">
+        <div class="mx-auto col-10 p-5 col-md-12" style="background-color:rgba(0,0,0,0.5);border-radius:30px;">
+          <h1 class="mb-4 text-warning text-center" style="font-size:40">EDIT INFORMATION</h1>
+          <!-- <form> -->
+            <input type="hidden" id="key" value={{ childkey }}>
+            <div class="form-group mb-3">
+              <div class="ui form">
+                <div class="field">
+                  <input type="text" name="name" id="Storenameeng" placeholder="NAME ENG" style="background-color:rgba(0,0,0,.5); font-family: inherit;" class="text-light"><br>
+                </div>
+                <div class="field">
+                  <input type="text" name="name" id="Storenameth" placeholder="NAME TH" style="background-color:rgba(0,0,0,.5); font-family: inherit;" class="text-light"><br>
+                </div>
+                <div class="field">
+                  <textarea style="height: 143px; margin-top: 0px; margin-bottom: 0px;background-color:rgba(0,0,0,.5); font-family: inherit;" name="address" id="Address" placeholder="ADDRESS" class="text-light"></textarea>
+                </div>
+                <div class="field">
+                  <input type="text" name="store phone" id="Phone" placeholder="STORE PHONE NUMBER" style="background-color:rgba(0,0,0,.5); font-family: inherit;" class="text-light">
+                </div>     
+            <input type="time" id="OpenTime" value="00:00" style="background-color:rgba(0,0,0,.5); font-family: inherit; color: #fff;"><br><br>
+            <input type="time" id="CloseTime" value="00:00" style="background-color:rgba(0,0,0,.5); font-family: inherit; color: #fff;"><br><br>
+              </div>
+            </div>
+            <h1 class="text-warning">Edit Poem Here.</h1>
+            <div class="ui form">
+              <div class="field">
+                <textarea style="height: 143px; margin-top: 0px; margin-bottom: 0px;background-color:rgba(0,0,0,.5); font-family: inherit;" id='Poem' name="Poem" placeholder="Poem" class="text-light"></textarea>
+              </div>
+            </div>
+            <br>
+            <h1 class="text-warning">Edit Logo Here.</h1>
+            <div>
+              <img id="blah" src="assets/picture/upload.jpg" alt="your image" style="width:400px;height:300">
+            </div>
+            <br>
+            <div>
+              <input type="file" onchange="readURL(this);" id="img">
+            </div>
+            <br>
+            <br><br>
+            <h1 class="text-warning">Edit Background Here.</h1>
+            <div>
+              <img id="blah2" src="assets/picture/upload.jpg" alt="your image" style="width:400px;height:300">
+            </div>
+            <br>
+            <div>
+              <input type="file" onchange="readURL2(this);" id="img2">
+            </div>
+            <br>
+            <br><br>
+            <h1 class="text-warning">Edit Store Picture Here.</h1>
+            <div>
+              <img id="blah3" src="assets/picture/upload.jpg" alt="your image" style="width:400px;height:300">
+            </div>
+            <br>
+            <div>
+              <input type="file" onchange="readURL3(this);" id="img3">
+            </div>
+            <br>
+            <br><br>
+            
+            <button type="submit" id="submit" onclick="editProfile()"  class="ui yellow button">SUBMIT</button>
+          <!-- </form> -->
+        </div><a>
+        </a>
+      </div><a>
+      </a>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#blah').attr('src', e.target.result).width(400).height(300);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+  <script type="text/javascript" >
+    function readURL2(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#blah2').attr('src', e.target.result).width(400).height(300);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+<script type="text/javascript" >
+  function readURL3(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#blah3').attr('src', e.target.result).width(400).height(300);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+<!-- <script>
+    $(document).ready(function(){
+      console.log('{{ childkey }}');
+    });
+</script> -->
+
+<!-- footer -->
+{%include "../partials/Footer.html"%}
+{% endblock %}
+<script src="js/userbar.js"></script>
+
+
+

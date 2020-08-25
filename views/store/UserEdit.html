@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PAGE settings -->
+  <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <title>UserEdit Page</title>
+  <meta name="description" content="Free Bootstrap 4 Pingendo Elegant template for restaurant and food">
+  <meta name="keywords" content="Pingendo restaurant food elegant free template bootstrap 4">
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" type="text/css">
+  <link rel="stylesheet" href="css/elegant.css" type="text/css">
+  <link rel="stylesheet" href="css/puankin.css" type="text/css">
+  <link rel="stylesheet" href="css/font.css" type="text/css">
+  <!-- Script: Make my navbar transparent when the document is scrolled to top -->
+  <script src="js/navbar-ontop.js"></script>
+  <!-- Script: Animated entrance -->
+  <script src="js/animate-in.js"></script>
+  <script src="js/editAccount.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD2nPgTenY_0JoEXbjiV2kooOv0lWyixak",
+    authDomain: "projectse-5d5b6.firebaseapp.com",
+    databaseURL: "https://projectse-5d5b6.firebaseio.com",
+    projectId: "projectse-5d5b6",
+    storageBucket: "projectse-5d5b6.appspot.com",
+    messagingSenderId: "980750030684"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar-expand-md navbar-dark navbar fixed-top navbar-ontop" style="">
+    <div class="container-fluid">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation" style=""> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav w-100">
+          <a class="nav-link mx-auto" href="Book page.html" style=""><b><br><br>
+              <font size="6" class="text-warning">HOME PAGE</font>
+            </b></a>
+          <a class="nav-link mx-auto" href="Book page.html"><b><br><br>
+              <font size="6" class="text-warning">BOOK</font>
+            </b></a>
+          <img class="img-fluid d-block mx-auto" src="assets/picture/puankin2.png" style="">
+          <a class="nav-link mx-auto" href="Book page.html" style=""><b><br><br>
+              <font size="6" class="text-warning">PROMOTION<br>EVENT</font>
+            </b></a>
+        </ul>
+      </div>
+    </div>
+    <div id="insertUser">
+    </div>
+  </nav>
+  <!-- Cover -->
+  <!-- Intro -->
+  <!-- Gallery -->
+  <!-- Menu -->
+  <!-- Carousel reviews -->
+  <!-- Carousel venue -->
+  <!-- Events -->
+  <!-- Dark opaque section -->
+  <!-- Footer -->
+  <!-- JavaScript dependencies -->
+  <div class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url(&quot;assets/picture/puankin_19.jpg&quot;);">
+    <div class="container"><br><br><br><br>
+      <div class="row">
+        <div class="mx-auto col-10 p-5 col-md-12" style="background-color:rgba(0,0,0,0.5);border-radius:30px;">
+          <h1 class="mb-4 text-warning text-center" style="font-size:40">EDIT INFORMATION</h1>
+          <!-- <form> -->
+            <div class="form-group mb-3">
+              <div class="ui form">
+                <div class="field">
+                  <input type="text" name="name" id="storenameeng" placeholder="NAME ENG" style="background-color:rgba(0,0,0,.5);" class="text-light"><br>
+                </div>
+                <div class="field">
+                  <input type="text" name="name" id="storenameth" placeholder="NAME TH" style="background-color:rgba(0,0,0,.5);" class="text-light"><br>
+                </div>
+                <div class="field">
+                  <textarea style="height: 143px; margin-top: 0px; margin-bottom: 0px;background-color:rgba(0,0,0,.5);" name="address" id="address" placeholder="ADDRESS" class="text-light"></textarea>
+                </div>
+                <div class="field">
+                  <input type="text" name="store phone" id="storephone" placeholder="STORE PHONE NUMBER" style="background-color:rgba(0,0,0,.5);" class="text-light">
+                </div>
+                <div class="field"><input type="text" name="time" id="open" placeholder="OPEN" style="background-color:rgba(0,0,0,.5);" class="text-light">
+                </div>
+                <div class="field"><input type="text" name="time" id="close" placeholder="CLOSE" style="background-color:rgba(0,0,0,.5);" class="text-light">
+                  <br>
+                </div>
+              </div>
+            </div>
+            <h1 class="text-warning">Edit Logo Here.</h1>
+            <div>
+              <img id="blah" src="assets/picture/upload.jpg" alt="your image" style="width:400px;height:300">
+            </div>
+            <br>
+            <div>
+              <input type="file" onchange="readURL(this);">
+            </div>
+            <br>
+            <br><br>
+            <h1 class="text-warning">Edit Background Here.</h1>
+            <div>
+              <img id="blah2" src="assets/picture/upload.jpg" alt="your image" style="width:400px;height:300">
+            </div>
+            <br>
+            <div>
+              <input type="file" onchange="readURL2(this);">
+            </div>
+            <br>
+            <br><br>
+            <h1 class="text-warning">Edit Poem Here.</h1>
+            <div class="ui form">
+              <div class="field">
+                <textarea style="height: 143px; margin-top: 0px; margin-bottom: 0px;background-color:rgba(0,0,0,.5);" name="poem" placeholder="Poem" class="text-light"></textarea>
+              </div>
+            </div>
+            <br>
+            <button type="submit" id="submit" onclick="editAccount()" class="ui yellow button">SUBMIT</button>
+          <!-- </form> -->
+        </div><a>
+        </a>
+      </div><a>
+      </a>
+    </div>
+  </div>
+  <div class="py-3 bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-6" style=""><img class="img-fluid d-block my-4" src="assets/picture/puankin2.png"></div>
+        <div class="col-lg-4 col-6 p-3" style="">
+          <a class="nav-link" href="Home page.html"><b>
+              <font size="5">HOME PAGE</font>
+            </b></a>
+          <a class="nav-link" href="Book page.html"><b>
+              <font size="5">BOOK</font>
+            </b></a>
+          <a class="nav-link" href="Promotion page.html"><b>
+              <font size="5">PROMOTION/EVENT</font>
+            </b></a>
+          <a class="nav-link" href="Contact page.html"><b>
+              <font size="5">CONTACT US</font>
+            </b></a>
+          <a class="nav-link" href="LogIn page.html"><b>
+              <font size="5">FOR STORE OWNER</font>
+            </b></a>
+        </div>
+        <div class="col-lg-3 col-md-4 p-3" style="">
+          <h1> Follow Us </h1>
+          <div class="row">
+            <div class="d-flex align-items-center justify-content-between my-2 col-md-12"> <a href="#">
+                <i class="d-block fa fa-facebook-official text-muted fa-lg mr-2"></i>
+              </a>
+              <label class="w-100 my-1" style="font-size:25px"> PuanKin.official</label></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 d-flex align-items-center justify-content-between my-2"> <a href="#">
+                <i class="d-block fa fa-instagram text-muted fa-lg mr-2"></i>
+              </a>
+              <label class="w-100 my-1" style="font-size:25px">Puankin.official</label></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 d-flex align-items-center justify-content-between my-2"> <a href="#">
+                <i class="d-block fa fa-twitter text-muted fa-lg mr-2"></i>
+              </a>
+              <label class="w-100 my-1" style="font-size:25px">Puankin.official</label></div>
+          </div>
+          <div class="row">
+          </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" style=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous" style=""></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!-- Script: Smooth scrolling between anchors in the same page -->
+        <script src="js/smooth-scroll.js" style=""></script>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0 mt-2" style="font-size:20px">© 2014-2018 PuanKin. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+  <script type="text/javascript" style="">
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#blah').attr('src', e.target.result).width(400).height(300);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+  <script type="text/javascript" style="">
+    function readURL2(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#blah2').attr('src', e.target.result).width(400).height(300);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+  <script src="js/userbar.js"></script>
+</body>
+
+</html>

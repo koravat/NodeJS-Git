@@ -1,0 +1,117 @@
+{% extends '../partials/Template.html' %}
+
+{% block title %}Add-Promotion-page{% endblock %}
+
+{% block head %}
+  <!-- {% parent %} -->
+  <link rel="stylesheet" href="css/puankin.css" type="text/css">
+  <script type="text/javascript" src="js/addpromo.js"> </script>
+  <script src='js/auth/auth_nomal.js'></script>
+
+  <!-- for Datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.standalone.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+  
+{% block content %}
+<!-- top -->
+{%include "../partials/NavbarTop.html"%}
+
+<!-- Cover -->
+<!-- content -->
+<!-- Intro -->
+<div class="align-items-center d-flex photo-overlay py-5 cover text-warning bg-primary" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_10.jpg&quot;);">
+  <div class="container"><br><br><br><br>
+    <div class="row animate-in-down">
+      <div class="col-md-12" style="background-color:rgba(0,0,0,0.5);border-radius:30px;">
+        <div class="row">
+          <div class="col-md-5 mx-auto">
+            <h1 class="text-center text-warning">
+              <br><br> ADD PROMOTION </h1>
+            <div class="ui form">
+              <div class="field">
+                <input placeholder="TITLE" id="title" style="background-color:rgba(0,0,0,.5);font-family: inherit;" class="text-light" type="text"><br>
+              </div>
+              <div class="field"><textarea style="height: 163px; margin-top: 0px; margin-bottom: 0px; background-color: rgba(0,0,0,.5);" id="desc" placeholder="TEXT" class="text-light"></textarea>
+              </div>
+              <div class="field">
+                <h1 class="text-warning"> START </h1><br>
+                <div class="container-boot">
+                  <div class="input-group date" style="width:230px">
+                      <input type="text" class="form-control" id="datepickerS" placeholder="DD/MM/YYYY" style="font-family: inherit;" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <h1 class="text-warning"> END </h1><br>
+                <div class="container-boot">
+                  <div class="input-group date" style="width:230px">
+                      <input type="text" class="form-control" id="datepickerE" placeholder="DD/MM/YYYY" style="font-family: inherit;" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div><br>
+              <div>
+                <img id="blah" src="assets/picture/upload.jpg" alt="your image" style="width:400px;height:300">
+              </div>
+              <br>
+              <div>
+                <input type="file" onchange="readURL(this);" id="img" accept="image/x-png,image/gif,image/jpeg" >
+              </div>
+              <br>
+              <button type="submit" onclick="addpromo()" class="ui yellow button">SUBMIT</button>
+              <div>
+                <br><br><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" style="">
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#blah').attr('src', e.target.result).width(400).height(300);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+<script src="js/userbar.js"></script>
+
+<script>
+  $('#datepickerS').datepicker({
+    format:"dd/mm/yyyy",
+    autoclose: true,
+    todayHighlight: true,
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    autoclose: true,
+    changeMonth: true,
+    changeYear: true,
+    orientation: "button"
+  });
+  $('#datepickerE').datepicker({
+    format:"dd/mm/yyyy",
+    autoclose: true,
+    todayHighlight: true,
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    autoclose: true,
+    changeMonth: true,
+    changeYear: true,
+    orientation: "button"
+  });
+</script>
+
+<script src="js/userbar.js"></script>
+<!-- footer -->
+{%include "../partials/Footer.html"%}
+{% endblock %}

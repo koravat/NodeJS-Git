@@ -1,0 +1,32 @@
+{% extends '../partials/Template.html' %}
+
+{% block title %}Book-page{% endblock %}
+
+{% block head %}
+  <!-- {% parent %} -->
+  <script type="text/javascript" src="js/insertStore.js"></script>
+  <script src="js/auth/gotoStore.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- top -->
+{%include "../partials/NavbarTop.html"%}
+
+<!-- Cover -->
+<div class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_3.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="d-block mx-auto img-fluid" src="assets/picture/46847369_323405114919158_2617888364841402368_n.png">
+                <h1 class="text-center text-warning" style="font-size:40"> แหล่งรวมความบันเทิง ถ้าคุณเหงา เราคือเพื่อน </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- content -->
+<div class="photo-overlay bg-primary text-warning" id="insertStore"></div>
+
+<!-- footer -->
+{%include "../partials/Footer.html"%}
+{% endblock %}

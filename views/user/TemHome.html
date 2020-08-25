@@ -1,0 +1,85 @@
+{% extends '../partials/Template.html' %}
+
+{% block title %}Home-page{% endblock %}
+
+{% block head %}
+  <!-- {% parent %} -->
+  <script type="text/javascript" src="js/insertPromotion.js"></script>
+  <script type="text/javascript" src="js/insertEvent.js"></script>
+  <script type="text/javascript" src="js/recomment.js"></script>
+  <script src="js/auth/gotoStore.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- top -->
+{%include "../partials/NavbarTop.html"%}
+
+<!-- Cover -->
+<div class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_1.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="d-block mx-auto img-fluid" src="assets/picture/46847369_323405114919158_2617888364841402368_n.png">
+                <h1 class="text-center text-warning" style="font-size:40"> แหล่งรวมความบันเทิง ถ้าคุณเหงา เราคือเพื่อน </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- content -->
+<!-- Intro -->
+<div class="py-5 bg-primary" id="speakers">
+        <div class="container">
+          <div class="row my-5 bg-secondary animate-in-down">
+            <div class="p-4 col-md-12 bg-dark">
+              <div id="carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"> <img class="d-block img-fluid w-100" src="assets/picture/AoUdom8.png">
+                  </div>
+                  <div class="carousel-item"> <img class="d-block img-fluid w-100" src="assets/picture/13hang9.png">
+                  </div>
+                  <div class="carousel-item"> <img class="d-block img-fluid w-100" src="assets/picture/AoUdom2.png">
+                  </div>
+                  <div class="carousel-item"> <img class="d-block img-fluid w-100" src="assets/picture/13hang10.png">
+                  </div>
+                </div> <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery -->
+      <!-- Menu -->
+      <!-- Carousel reviews -->
+      <!-- Carousel venue -->
+      <!-- Events -->
+      <div class="align-items-center d-flex photo-overlay py-5 cover text-warning" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_4.jpg&quot;)">
+        <div class="container">
+          <div class="row animate-in-down">
+            <div class="col-md-12">
+              <h1 class="display-4 text-warning text-center">PROMOTION</h1>
+              <div class="row" id="insertPromo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-5 bg-primary">
+        <div class="container">
+          <div class="row animate-in-down">
+            <div class="col-md-12">
+              <h1 class="display-4 text-warning text-center">EVENT</h1>
+              <div class="row" id="insertEvent">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_2.jpg&quot;)">
+        <div class="container" id="insertStore">
+        </div>
+      </div>
+
+<!-- footer -->
+{%include "../partials/Footer.html"%}
+{% endblock %}

@@ -1,0 +1,52 @@
+<!-- Navbar -->
+<nav class="navbar-expand-md navbar-dark navbar fixed-top navbar-ontop" id='NavBarTop'>
+    <div class="container-fluid">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation" style=""> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav w-100" style="">
+            <a class="nav-link mx-auto" href="/puankin/home" style=""><b><br><br>
+                <font size="6" class="text-warning">HOME PAGE</font>
+            </b></a>
+            <a class="nav-link mx-auto" href="/puankin/book"><b><br><br>
+                <font size="6" class="text-warning">BOOK</font>
+            </b></a>
+            <img class="img-fluid d-block mx-auto" src="assets/picture/puankin2.png" style="">
+            <a class="nav-link mx-auto" href="/puankin/promotion" style=""><b><br><br>
+                <font size="6" class="text-warning">PROMOTION<br>EVENT</font>
+            </b></a>
+            <a id='main-top-contact' class="nav-link mx-auto" href="/puankin/contract" ><b><br><br>
+                <font size="6" class="text-warning">CONTACT US</font>
+            </b></a>
+        </ul>
+        </div>
+    </div>
+
+    <div id="main-top-bar" >
+        <div class="user-menu">
+          <div class="user-menu-item">
+            <div class="user-image-wrapper">
+              <span class="user-image" style="margin-top:35px; margin-right: 10px">
+                  <img id="UserLogo" src="assets/picture/edit.png"></span>
+            </div>
+            <div class="user-name-wrapper" style="margin-top:50px"> 
+            <div>
+                <h6 id="UserNameEng" class="text-warning" style="font-family: inherit;font-size: 15px;">Puankin</h6>
+                <i class="fa fa-caret-down"></i>
+            </div> 
+            
+            </div>
+          </div>
+          <div class="user-dropdown">
+            <a id='Mypage' onclick='Mypage()' href="" class="dropdown-item"><span class="mr-3"><i class="fa fa-home"></i></span>My Page</a>
+            <form id='Pro-settings' action="/puankin/store/settings" method="post" style="display: none;">
+                <input id='Pro-key' type="hidden" name="childkey" value="childKey" />
+            </form>
+            <a onclick='Setting()' href="#" class="dropdown-item"><span class="mr-3"><i class="fa fa-user"></i></span> Edit Profile</a>
+            <a href="/puankin/store/addpromotion" class="dropdown-item"><span class="mr-3"><i class="fa fa-building"></i></span> Add Promotion</a>
+            <a href="/puankin/store/addevent" class="dropdown-item"><span class="mr-3"><i class="fa fa-building"></i></span> Add Event</a>
+            <a onclick='SignOut()' href="/puankin" class="dropdown-item"><span class="mr-3"><i class="fa fa-power-off"></i></span> Logout</a>
+          </div>
+        </div>
+        <div class="shape"></div>
+    </div>
+</nav>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enter Page</title>
+
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.31.0/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/elegant.css" type="text/css">
+
+  <!-- Script dependencies  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.31.0/sweetalert2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+  <script src='js/auth/firebaseConfig.js'></script>
+  
+  <script src='js/auth/auth_enter.js'></script>
+</head>
+
+<body>
+  <div id='EnterPage' class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url(&quot;assets/picture/Puankin/cover/puankin_6.jpg&quot;);">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 align-self-center text-lg-left text-center"><img class="img-fluid d-block mx-auto">
+          <p class="lead text-center text-warning h-25" style="">
+            <font face="sanamDeklenchaya" size="6">WELCOME TO PUANKIN!!</font>
+          </p>
+          <div class="buttons">
+            <button class="btn btn-two square" id='Enter' onclick="enterpage()">Enter your page!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

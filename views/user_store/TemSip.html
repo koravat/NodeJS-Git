@@ -1,0 +1,105 @@
+{% extends '../partials/Template.html' %}
+
+{% block title %}Progile-Sipsamhang-page{% endblock %}
+
+{% block head %}
+  <!-- {% parent %} -->
+  <link rel="stylesheet" href="css/bookSipsamhang.css" type="text/css">
+
+  <script type="text/javascript" src="js/bookSipsamhang.js"></script>
+  <script type="text/javascript" src="js/insertPromotionSipsamhang.js"></script>
+  <script type="text/javascript" src="js/insertEventSipsamhang.js"></script>
+  <script type="text/javascript" src="js/insertHeadSipsamhang.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- top -->
+{%include "../partials/NavbarTop.html"%}
+
+<!-- Cover -->
+<div id="insertHeadSipsamhang">
+    <div id="background" class="align-items-center d-flex photo-overlay py-5 cover" style="background-image: url();">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 align-self-center text-lg-left text-center"><img id="logo" class="img-fluid d-block mx-auto" src="">
+                    <p class="lead text-center text-warning">
+                    <font id="poem" size="6" style="font-size:50px"></font>
+                    </p>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+<!-- content -->
+<!-- Google Map -->
+<div class="py-5 bg-primary">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"><iframe width="100%" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.808768012431!2d100.92255831475707!3d13.111297890764362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102b9cf84895477%3A0x7adcc752aefa4042!2z4Liq4Li04LiaIOC4quC4suC4oSDguKvguYnguLLguIcg4LiTIOC4reC5iOC4suC4p-C4reC4uOC4lOC4oSDguJ4u4LioLuC5kuC5leC5leC5mQ!5e0!3m2!1sth!2sth!4v1542729346099;output=embed" scrolling="no" frameborder="0"></iframe></div>
+    </div>
+</div>
+</div>
+
+<!-- 3D -->
+<div style="background-color:#1b2021 ">
+    <iframe src="./Sipsamhang-3D-Pic/Sipsamhang3D.html" style="width:100%;height:650px;border-color:transparent;" ></iframe>
+  </div>
+
+<!-- Seat -->
+<div class="py-5 bg-primary" id="speakers">
+    <div class="container">
+      <div class="row my-5 bg-secondary animate-in-down">
+        <div class="p-4 col-md-12 bg-primary">
+          <h1 class="display-4 text-warning text-center">SEAT</h1>
+          <div class="container">
+            <div style="background-image: url('./assets/picture/plan2.png');width: 1024px;height: 360px;" id="Book">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="text-warning"> NAME : </h2>
+        <div class="ui form" style="padding:0 10px">
+          <div class="field">
+            <input name="name" placeholder="NAME" type="text" id="name" style="font-family: inherit;"><br>
+          </div>
+        </div>
+        <h2 class="text-warning" style="margin-left:40"> PHONE NUMBER : </h2>
+        <div class="ui form" style="padding:0 10px">
+          <div class="field">
+            <input name="PHONE" placeholder="PHONE NUMBER" id="phone" type="text" style="font-family: inherit;"><br>
+          </div>
+        </div>
+        <button class="ui yellow button" type="submit" style="margin-left:30px" onclick="changePic2()">SUBMIT</button>
+      </div>
+    </div>
+</div>
+
+<!-- Promotion -->
+<div class="align-items-center d-flex photo-overlay py-5 cover text-warning bg-primary">
+    <div class="container">
+    <div class="row animate-in-down">
+    <div class="col-md-12">
+        <h1 class="display-4 text-warning text-center">PROMOTION</h1>
+        <div class="row" id="insertPromo"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!-- Activity -->
+<div class="align-items-center d-flex photo-overlay py-5 cover text-warning bg-primary">
+    <div class="container">
+    <div class="row animate-in-down">
+    <div class="col-md-12">
+        <h1 class="display-4 text-warning text-center">EVENT</h1>
+        <div class="row" id="insertEvent"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!-- footer -->
+{%include "../partials/Footer.html"%}
+{% endblock %}
