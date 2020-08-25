@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'fc_lamoonbold_italic';
+    src: url('fc_lamoon_bold_italic_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_bold_italic_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonbold_italic';
+    src: url('fc_lamoon_bold_italic_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_bold_italic_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonbold';
+    src: url('fc_lamoon_bold_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_bold_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonbold';
+    src: url('fc_lamoon_bold_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_bold_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonlight_italic';
+    src: url('fc_lamoon_light_italic_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_light_italic_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonlight_italic';
+    src: url('fc_lamoon_light_italic_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_light_italic_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonlight';
+    src: url('fc_lamoon_light_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_light_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonlight';
+    src: url('fc_lamoon_light_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_light_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonregular_italic';
+    src: url('fc_lamoon_regular_italic_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_regular_italic_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonregular_italic';
+    src: url('fc_lamoon_regular_italic_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_regular_italic_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonregular';
+    src: url('fc_lamoon_regular_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_regular_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'fc_lamoonregular';
+    src: url('fc_lamoon_regular_ver_1.00-webfont.woff2') format('woff2'),
+         url('fc_lamoon_regular_ver_1.00-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+  font-family:'fc_lamoonbold',sans-serif;
+
+}
+h1,h2,h3,h4,h5{
+  font-family:'fc_lamoonbold',sans-serif;
+
+}
